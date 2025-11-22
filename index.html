@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Sarweshwar | Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="hero">
+        <h1>Hi, I'm Sarweshwar 👋</h1>
+        <p>Python Developer Intern | B.Tech AI & ML Student</p>
+    </header>
+
+    <section class="about">
+        <h2>About Me</h2>
+        <p>
+            I am a B.Tech student specializing in Artificial Intelligence & Machine Learning.
+            I enjoy building Python projects such as CLI tools, Flask APIs and data analysis notebooks.
+        </p>
+    </section>
+
+    <section class="projects">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>CLI Calculator</strong> – Basic arithmetic operations in the terminal.</li>
+            <li><strong>To-Do App</strong> – Console app with file storage for tasks.</li>
+            <li><strong>News Web Scraper</strong> – Scrapes headlines using requests & BeautifulSoup.</li>
+            <li><strong>Sales Data Analysis</strong> – Pandas + charts on CSV data.</li>
+        </ul>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+
+        {% if message_sent %}
+            <div class="success">
+                ✅ Thank you {{ submitted.name }}! Your message has been received.
+            </div>
+        {% endif %}
+
+        <form method="POST" action="/">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; {{ 2025 }} Sarweshwar. All rights reserved.</p>
+    </footer>
+</body>
+</html>
